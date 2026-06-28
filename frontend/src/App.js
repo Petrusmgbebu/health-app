@@ -5,7 +5,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/patients')
+    fetch('https://health-api-tmpk.onrender.com/patients')
       .then(res => res.json())
       .then(data => {
         setPatients(data);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div style={{ fontFamily: 'Arial', padding: '20px' }}>
-      <h1>Patient Dashboard</h1>
+      <h1>Patient Dashboard (Cloud)</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
