@@ -7,6 +7,8 @@ const client = new Client({
   host: process.env.DB_HOST || "db.uiigxqjkzgecjxubjlke.supabase.co",
   port: parseInt(process.env.DB_PORT || "5432"),
   database: process.env.DB_NAME || "postgres",
+  family: 4,                    // Force IPv4
+  ssl: { rejectUnauthorized: false } // Supabase requires SSL
 });
 
 client.connect();
